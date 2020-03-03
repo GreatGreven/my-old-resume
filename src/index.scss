@@ -1,11 +1,59 @@
+:root{
+ font-size: 16px;
+ font-family: 'Open Sans';
+ --text-primary: #b6b6b6;
+ --text-secondary: #ececec;
+ --bg-primary:#23232e;
+ --bg-sedcondary:#141418;
+ --transition-speed: 600ms;
+}
+
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  color: black;
+  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+
+}
+
+body::-webkit-scrollbar-track{
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-track{
+  background: #6649b8;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
