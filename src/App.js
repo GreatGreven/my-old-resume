@@ -22,7 +22,7 @@ class App extends Component {
     super();
     let current = localStorage.getItem('theme') ? localStorage.getItem('theme') : this.state.themeMap.solar;
     if (!current) {
-      // current = this.state.themeMap.solar;
+      current = this.state.themeMap.solar;
     }
     document.body.classList.add(current)
     localStorage.setItem('theme', current)
@@ -56,102 +56,101 @@ class App extends Component {
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
-                  className="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
-                >
+                  className="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
                   <g className="fa-group">
                     <path
                       fill="currentColor"
                       d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
                       className="fa-secondary"
-                    ></path>
+                    />
                     <path
                       fill="currentColor"
                       d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
                       className="fa-primary"
-                    ></path>
+                    />
                   </g>
                 </svg>
               </div>
             
               <Link to='/profile' className="nav-item">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                aria-hidden="true" 
-                focusable="false" 
-                data-prefix="fas" 
-                data-icon="user" 
-                className="svg-inline--fa fa-user fa-w-14" 
-                role="img" 
-                viewBox="0 0 448 512">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  aria-hidden="true" 
+                  focusable="false" 
+                  data-prefix="fas" 
+                  data-icon="user" 
+                  className="svg-inline--fa fa-user fa-w-14" 
+                  role="img" 
+                  viewBox="0 0 448 512">
                   <path 
-                  fill="currentColor" 
-                  d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
-                  className="fa-secondary"
-              />
-              </svg>
+                    fill="currentColor" 
+                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                    className="fa-secondary"
+                  />
+                </svg>
                 <span className="link-text">Profile</span>
               </Link>
   
               <Link to='/resume' className="nav-item">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                aria-hidden="true" 
-                focusable="false" 
-                data-prefix="fas" 
-                data-icon="file-alt" 
-                class="svg-inline--fa fa-file-alt fa-w-12" 
-                role="img" 
-                viewBox="0 0 384 512">
-                  <path 
-                  fill="currentColor" 
-                  d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
-                  className="fa-secondary "
-              />
-              </svg>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  aria-hidden="true" 
+                  focusable="false" 
+                  data-prefix="fas" 
+                  data-icon="file-alt" 
+                  class="svg-inline--fa fa-file-alt fa-w-12" 
+                  role="img" 
+                  viewBox="0 0 384 512">
+                    <path 
+                    fill="currentColor" 
+                    d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
+                    className="fa-secondary "
+                  />
+                </svg>
                 <span className="link-text">Resumé</span>
               </Link>
   
               <Link to='/portfolio' className="nav-item">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                aria-hidden="true" 
-                focusable="false" 
-                data-prefix="fas" 
-                data-icon="briefcase" 
-                className="svg-inline--fa fa-briefcase fa-w-16" 
-                role="img" 
-                viewBox="0 0 512 512">
-                  <path fill="currentColor" 
-                  d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
-                  className="fa-secondary"
-                  />
-                </svg>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  aria-hidden="true" 
+                  focusable="false" 
+                  data-prefix="fas" 
+                  data-icon="briefcase" 
+                  className="svg-inline--fa fa-briefcase fa-w-16" 
+                  role="img" 
+                  viewBox="0 0 512 512">
+                    <path fill="currentColor" 
+                    d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
+                    className="fa-secondary"
+                    />
+                  </svg>
                 <span className="link-text">Portfolio</span>
               </Link>
   
               <Link to='/contact' className="nav-item">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                aria-hidden="true" 
-                focusable="false" 
-                data-prefix="fas" 
-                data-icon="address-card" 
-                className="svg-inline--fa fa-address-card fa-w-18" 
-                role="img" 
-                viewBox="0 0 576 512">
-                <path 
-                  fill="currentColor" 
-                  d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"
-                  className="fa-secondary"
-                  />
-              </svg>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  aria-hidden="true" 
+                  focusable="false" 
+                  data-prefix="fas" 
+                  data-icon="address-card" 
+                  className="svg-inline--fa fa-address-card fa-w-18" 
+                  role="img" 
+                  viewBox="0 0 576 512">
+                  <path 
+                    fill="currentColor" 
+                    d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"
+                    className="fa-secondary"
+                    />
+                </svg>
                 <span className="link-text">Contact</span>
               </Link>
   
               <div className="nav-item" id="themeButton" onClick={this.toggleTheme}>
                 <svg
                   className="theme-icon svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
-                  id="lightIcon"
+                  id="darkIcon"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fad"
@@ -175,7 +174,7 @@ class App extends Component {
                 </svg>
                 <svg
                   className="theme-icon svg-inline--fa fa-sun fa-w-16 fa-7x"
-                  id="solarIcon"
+                  id="lightIcon"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fad"
@@ -199,7 +198,7 @@ class App extends Component {
                 </svg>
                 <svg
                   className="theme-icon svg-inline--fa fa-sunglasses fa-w-18 fa-7x"
-                  id="darkIcon"
+                  id="solarIcon"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fad"
