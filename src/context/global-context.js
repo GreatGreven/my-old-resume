@@ -2,27 +2,78 @@ import React from 'react';
 
 export default React.createContext({
     welcome: {},
-    profile: {
-        title: 'About me',
-        content: 'I\'m baby kale chips affogato ennui lumbersexual, ' + 
-                'williamsburg paleo quinoa iceland normcore tumeric. ' + 
-                'Kitsch coloring book retro, seitan schlitz tattooed ' + 
-                'biodiesel vexillologist neutra. Synth mumblecore deep v, ' + 
-                'umami selfies normcore gluten-free snackwave. Seitan ' + 
-                'ramps drinking vinegar venmo keytar, humblebrag VHS ' + 
-                'post-ironic tacos godard pour-over.'
-    },
+    profile: [
+        {
+        title: 'About',
+        content: 'My name is Eric Grevillius, 24 years old and my long term ' +
+                'career goal is to become a Fullstack developer. I\'m studying' + 
+                'at the moment my last semester of Computer Science and ' +
+                'Application Developers at Malmö University. I am a methodical ' + 
+                'and analytical problem solver with an eye for detail. As a person ' +
+                'I am a quick learner, have a high level of ambition and like the ' +
+                'feeling of delivering something of high quality. I am not afraid of ' +
+                'hard work with many long hours to row a project in port. ' +
+                'What I am looking for today is a great place to start my career.'
+        },
+        {
+            title: 'Interests',
+            content: 'My interests lie in technology, especially building, ' +
+                    'disassembling and understanding how both software and hardware' + 
+                    'work. I am passionate about software development. I am used to ' +
+                    'working with clients, working as part of a group, but also ' +
+                    'enjoy working independently. I am considered a responsible ' +
+                    'nice guy who is easy to talk to and always gives 100%.'
+        }
+    ],
     resume: {
-        title: 'My resumé',
-        content: 'Pok pok lumbersexual wayfarers, direct trade leggings' + 
-                'poutine truffaut kitsch. Seitan aesthetic master cleanse' + 
-                'squid coloring book banh mi YOLO vegan locavore' + 
-                'vexillologist readymade next level pop-up edison bulb.' + 
-                'Selvage knausgaard literally, quinoa photo booth 3 wolf' + 
-                'moon microdosing freegan yuccie. Truffaut gentrify lomo put' + 
-                'a bird on it waistcoat. Ugh austin distillery, tbh actually' + 
-                'pork belly snackwave artisan mixtape quinoa vexillologist' + 
-                'pok pok polaroid listicle readymade.'
+        title: 'Resume',
+        content: [
+            {
+                title: "Core Skills",
+                content: [
+                    "Problem-solving",
+                    "Application Development", 
+                    "Object-oriented programming",
+                    "Web Development",
+                    "Project Management",
+                    "Database Management",
+                    "Embedded Systems",
+                ]},
+            {
+                title: "Education & Qualifications",
+                content: [
+                    "Computer Science and Application development, Malmö University. (2017 - ongoing, expected graduation June 2020)",
+                    "The electricity and energy program at Östersjögymnasiet, targeting computer and communication technology. (graduated 2015)",
+                    "Foreign Exchange student program in California with Youth For Understanding (YFU) (2012/2013)",
+                    "Alfa Laval, IT Service Desk, internship during my studies (2014)",
+                    "Basketball coach and referee training",
+                    "40+ hours of Web Development courses",
+                    "90+ hours of Game Development courses",
+                ]
+            },
+            {
+                title: "Professional Experience",
+                content: [
+                    "Summer work @ Alfa Laval AB, Sweden (2014)",
+                    "Kitchen staff @ Hotel Ystad Saltsjöbad, Sweden (2015)",
+                    "Substitute caregiver for elderly in Ystad, Sweden (2015)",
+                    "Substitute worker and part-time during studies at Alfa Laval's Logistic Center, Staffanstorp (December 2015 - August 2019)",
+                ]
+            },
+            {
+                title: "Programming Languages",
+                content: [
+                    "Java",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "C# .NET",
+                    "C",
+                    "Assembly",
+                    "Python",
+                ]
+            }
+        ]
     },
     portfolio: {
         title: 'My portfolio',
@@ -39,16 +90,13 @@ export default React.createContext({
                 'carry tote bag artisan cray wolf jianbing.'
     },
     contact: {
-        title: 'Contact me',
-        content: 'Taxidermy thundercats whatever austin. VHS helvetica ethical,' + 
-                'dreamcatcher enamel pin YOLO shabby chic locavore man bun crucifix' + 
-                'pabst chillwave pop-up vegan. Air plant mlkshk ethical echo park' + 
-                'tumeric, whatever crucifix godard scenester locavore pork belly yuccie' + 
-                'vape. +1 gochujang put a bird on it, pork belly whatever selfies vaporware' + 
-                'occupy banh mi normcore VHS. Cornhole normcore hashtag tilde.' + 
-                'Hell of yr try-hard DIY raw denim banjo, enamel pin irony polaroid copper' + 
-                'mug tofu. Dreamcatcher lomo literally 90\'s before they sold out, 3 wolf' + 
-                'moon banh mi seitan chambray cliche offal tote bag occupy pug.'
-    },
+        title: 'Contact',
+        content: [
+            {title:"Location",content:"Sjöbo, Sweden"},
+            {title:"Email", content: "ericgrevillius@gmail.com"},
+            {title:"LinkedIn", content:"https://www.linkedin.com/in/eric-grevillius-b2356119a/"},
+            {title:"GitHub", content:"https://github.com/GreatGreven"}
+        ] 
+        },
     notFound: {}
 });
