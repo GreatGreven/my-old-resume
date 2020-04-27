@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -41,8 +41,8 @@
       "last 1 safari version"
     ]
   },
-  "engines" : {
+  "engines": {
     "npm": "6.4.1",
     "node": "10.5.2"
-}
+  }
 }
