@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import Profile from './pages/Profile';
+import About from './pages/About';
 import Resumé from './pages/Resume';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
@@ -72,7 +72,7 @@ class App extends Component {
                 </svg>
               </div>
             
-              <Link to='/profile' className="nav-item">
+              <Link to='/about' className="nav-item">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   aria-hidden="true" 
@@ -88,7 +88,7 @@ class App extends Component {
                     className="fa-secondary"
                   />
                 </svg>
-                <span className="link-text">Profile</span>
+                <span className="link-text">About</span>
               </Link>
   
               <Link to='/resume' className="nav-item">
@@ -227,7 +227,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/profile' component={Profile}/>
+            <Route path='/profile' component={About}/>
             <Route path='/resume' component={Resumé}/>
             <Route path='/portfolio' component={Portfolio}/>
             <Route path='/contact' component={Contact}/>
