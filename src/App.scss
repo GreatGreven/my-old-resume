@@ -1,6 +1,7 @@
 main {
   margin-left: 5rem;
   padding: 1rem;
+  background-color: var(--bg-main);
 }
 
 .navbar {
@@ -32,7 +33,6 @@ main {
 
 .nav-item:last-child {
   margin-top: auto;
-  // justify-self: flex-end;
 }
 
 .nav-item:hover {
@@ -47,6 +47,7 @@ main {
 
 .nav-item svg {
   min-width: 2rem;
+  max-width: 2rem;
   margin: 0 1.5rem;
 }
 
@@ -86,7 +87,7 @@ main {
 }
 
 /* Small screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -103,6 +104,16 @@ main {
 
   .nav-link {
     justify-content: center;
+  }
+
+  .nav-item {
+   width: 20vw;
+   justify-content: center;
+  }
+
+  .nav-item svg {
+    min-width: 0;
+    margin: 0 5vw;
   }
 
   main {

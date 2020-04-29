@@ -1,10 +1,14 @@
 import React from 'react';
 import './Home.scss' 
 
-export default function Welcome(){
+export default function Home(){
     return (
-        <div>
-            <h1>Welcome</h1>
+        <div id="home">
+            <h1>Hello World! <br />
+                I'm  
+                <span>Eric</span> 
+                <span>Grevillius</span>
+                </h1>
         </div>
     );
 }
