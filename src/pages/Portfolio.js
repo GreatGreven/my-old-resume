@@ -1,10 +1,16 @@
 import React from 'react';
-import './Portfolio.scss' 
+import GlobalContext from '../context/global-context.js'
+import './Portfolio.scss'
 
-export default function Portfolio(){
+export default function Portfolio() {
     return (
-        <div id="portfolio">
-            <h1>Portfolio</h1>
-        </div>
+        <GlobalContext.Consumer>
+            {context => (
+                <div id="portfolio">
+                    <h1>{context.portfolio.title}</h1>
+                    <p>{context.portfolio.content}</p>
+                </div>
+            )}
+        </GlobalContext.Consumer>
     );
 }

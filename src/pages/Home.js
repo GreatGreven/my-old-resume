@@ -1,14 +1,20 @@
 import React from 'react';
-import './Home.scss' 
+import GlobalContext from '../context/global-context.js'
+import './Home.scss';
 
 export default function Home(){
     return (
-        <div id="home">
-            <h1>Hello World! <br />
-                I'm  
-                <span>Eric</span> 
-                <span>Grevillius</span>
-                </h1>
-        </div>
+        <GlobalContext.Consumer>
+            {context => (
+                <div id="home">
+                    <h1>
+                        {context.welcome.title.map(item => <span> {item}</span>)}
+                        <br />
+                        {context.welcome.highlight.map(item => <span className="highlight"> {item}</span>)}
+                    </h1>
+                    <img src={context.welcome.imageSmall}/>
+                </div>
+            )}
+        </GlobalContext.Consumer>
     );
 }
