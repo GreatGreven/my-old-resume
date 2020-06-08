@@ -5,6 +5,7 @@ import emailIcon from '../images/email_small.png';
 import githubIcon from '../images/GitHub-Mark-50px.png';
 import linkedinIcon from '../images/linkedin-logo-png-2026_small.png';
 import GlobalContext from './global-context';
+import emailjs from 'emailjs-com';
 
 class GlobalState extends Component {
     state = {
@@ -155,8 +156,8 @@ class GlobalState extends Component {
         if (!current) {
           current = this.state.themeMap.solar;
         }
-        document.body.classList.add(current)
-        localStorage.setItem('theme', current)
+        document.body.classList.add(current);
+        localStorage.setItem('theme', current);
       }
     
       toggleTheme = () => {
@@ -167,6 +168,17 @@ class GlobalState extends Component {
     
         document.body.classList.replace(current, next)
         localStorage.setItem('theme', next); 
+      }
+
+      sendEmail = (event) => {
+          event.preventDefault();
+          console.log('Sending email');
+          emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID)
+          .then((result) => {
+            console.log(result.text);
+          }, (error) => {
+            console.log(error.text);
+          });
       }
 
     render() {
@@ -181,7 +193,8 @@ class GlobalState extends Component {
                     portfolio: this.state.portfolio,
                     contact: this.state.contact,
                     notFound: this.state.notFound,
-                    toggleTheme: this.toggleTheme
+                    toggleTheme: this.toggleTheme,
+                    sendEmail: this.sendEmail,
                 }}
             >
                 {this.props.children}
