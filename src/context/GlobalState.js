@@ -143,7 +143,17 @@ class GlobalState extends Component {
                 { title: "Email", content: "mailto:ericgrevillius@gmail.com", image: emailIcon},
                 { title: "LinkedIn", content: "https://www.linkedin.com/in/eric-grevillius-b2356119a/", image: linkedinIcon},
                 { title: "GitHub", content: "https://github.com/GreatGreven", image: githubIcon}
-            ]
+            ],
+            feedback: {
+                status: '',
+                message: ''
+            },
+            form: {
+                user_name: '',
+                user_email: '',
+                subject: '',
+                message: ''
+            }
         },
         notFound: {
             title: 'Sorry! I have not implemented this page...'
@@ -163,19 +173,44 @@ class GlobalState extends Component {
       toggleTheme = () => {
         const current = localStorage.getItem('theme');
         const next = this.state.themeMap[current];
-        console.log(current)
-        console.log(next)
-    
         document.body.classList.replace(current, next)
         localStorage.setItem('theme', next); 
       }
 
+      updateContactField = (event) => {
+          event.preventDefault();
+          var property = event.target.id;
+          var value = event.target.value;
+          console.log(event.target.id,event.target.value)
+          this.setState((prevState) => ({
+            ...prevState,
+            contact: {
+                ...prevState.contact,
+                form: {
+                    ...prevState.contact.form,
+                    [property]:value,
+                }
+            }
+        }));
+      }
+
       sendEmail = (event) => {
           event.preventDefault();
-          console.log('Sending email');
-          emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID)
+          console.log('Sending email', this.state.contact.form);
+          emailjs.send(
+              process.env.REACT_APP_EMAILJS_SERVICE_ID, 
+              process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
+              this.state.contact.form, 
+              process.env.REACT_APP_EMAILJS_USER_ID)
           .then((result) => {
-            console.log(result.text);
+            console.log(result);
+            this.setState((prevState) => ({...prevState,
+                contact: { ...prevState.contact,
+                    feedback: {
+                        message: result.text
+                    } 
+                }
+            }));
           }, (error) => {
             console.log(error.text);
           });
@@ -195,6 +230,7 @@ class GlobalState extends Component {
                     notFound: this.state.notFound,
                     toggleTheme: this.toggleTheme,
                     sendEmail: this.sendEmail,
+                    updateContactField: this.updateContactField
                 }}
             >
                 {this.props.children}

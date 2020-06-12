@@ -43,7 +43,17 @@ export default React.createContext({
                 content:'',
                 image:''
             }
-        ] 
+        ],
+        feedback: {
+            status: '',
+            message: ''
         },
+        form: {
+            user_name: '',
+            user_email: '',
+            subject: '',
+            message: ''
+        }
+    },
     notFound: {}
 });
