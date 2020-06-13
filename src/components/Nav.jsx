@@ -11,7 +11,7 @@ export default function Nav(props){
                 <nav className="navbar">
                     <div className="navbar-nav">
 
-                        <div className="logo nav-item">
+                        <NavLink smooth to='/' className="logo nav-item">
                         <span className="link-text logo-text">Menu</span>
                         <svg
                             aria-hidden="true"
@@ -35,7 +35,7 @@ export default function Nav(props){
                             />
                             </g>
                         </svg>
-                        </div>
+                        </NavLink>
             
                         <NavLink smooth to='/about' className="nav-item">
                         <svg 

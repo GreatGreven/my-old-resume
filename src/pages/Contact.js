@@ -17,8 +17,9 @@ export default function Contact() {
                     </div>
                     <fieldset>
                         <legend>Send me a message</legend>
-                        {context.contact.feedback ? <div>
-                            
+                        {context.contact.feedback ? 
+                        <div className={context.contact.feedback.status}>
+                            {context.contact.feedback.message}
                         </div> : null}
                         <form onSubmit={context.sendEmail}>
                             <input type="hidden" name="contact_number" />
@@ -28,7 +29,7 @@ export default function Contact() {
                                 type='text' 
                                 id='user_name' 
                                 name='user_name' 
-                                required 
+                                value={context.contact.form.user_name}
                                 onChange={context.updateContactField}
                                 />
 
@@ -37,7 +38,7 @@ export default function Contact() {
                                 type='email' 
                                 id='user_email' 
                                 name='user_email'
-                                required 
+                                value={context.contact.form.user_email}
                                 onChange={context.updateContactField}
                                 />
 
@@ -46,7 +47,7 @@ export default function Contact() {
                                 type='text' 
                                 id='subject' 
                                 name='subject' 
-                                required 
+                                value={context.contact.form.subject}
                                 onChange={context.updateContactField}
                                 />
 
@@ -55,7 +56,7 @@ export default function Contact() {
                                 id='message' 
                                 name='message' 
                                 maxLength='5000' 
-                                required 
+                                value={context.contact.form.message}
                                 onChange={context.updateContactField}
                                 />
 

@@ -140,9 +140,9 @@ class GlobalState extends Component {
         contact: {
             title: 'Contact',
             content: [
-                { title: "Email", content: "mailto:ericgrevillius@gmail.com", image: emailIcon},
-                { title: "LinkedIn", content: "https://www.linkedin.com/in/eric-grevillius-b2356119a/", image: linkedinIcon},
-                { title: "GitHub", content: "https://github.com/GreatGreven", image: githubIcon}
+                { title: "Email", content: "mailto:ericgrevillius@gmail.com", image: emailIcon },
+                { title: "LinkedIn", content: "https://www.linkedin.com/in/eric-grevillius-b2356119a/", image: linkedinIcon },
+                { title: "GitHub", content: "https://github.com/GreatGreven", image: githubIcon }
             ],
             feedback: {
                 status: '',
@@ -160,64 +160,112 @@ class GlobalState extends Component {
         }
     };
 
-    constructor(){
+    constructor() {
         super();
         let current = localStorage.getItem('theme') ? localStorage.getItem('theme') : this.state.themeMap.solar;
         if (!current) {
-          current = this.state.themeMap.solar;
+            current = this.state.themeMap.solar;
         }
         document.body.classList.add(current);
         localStorage.setItem('theme', current);
-      }
-    
-      toggleTheme = () => {
+    }
+
+    toggleTheme = () => {
         const current = localStorage.getItem('theme');
         const next = this.state.themeMap[current];
         document.body.classList.replace(current, next)
-        localStorage.setItem('theme', next); 
-      }
+        localStorage.setItem('theme', next);
+    }
 
-      updateContactField = (event) => {
-          event.preventDefault();
-          var property = event.target.id;
-          var value = event.target.value;
-          console.log(event.target.id,event.target.value)
-          this.setState((prevState) => ({
+    updateContactField = (event) => {
+        event.preventDefault();
+        var property = event.target.id;
+        var value = event.target.value;
+        console.log(event.target.id, event.target.value)
+        this.setState((prevState) => ({
             ...prevState,
             contact: {
                 ...prevState.contact,
                 form: {
                     ...prevState.contact.form,
-                    [property]:value,
+                    [property]: value,
+                },
+                feedback: {
+                    status: '',
+                    message: ''
                 }
             }
         }));
-      }
+    }
 
-      sendEmail = (event) => {
-          event.preventDefault();
-          console.log('Sending email', this.state.contact.form);
-          emailjs.send(
-              process.env.REACT_APP_EMAILJS_SERVICE_ID, 
-              process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
-              this.state.contact.form, 
-              process.env.REACT_APP_EMAILJS_USER_ID)
-          .then((result) => {
-            console.log(result);
-            this.setState((prevState) => ({...prevState,
-                contact: { ...prevState.contact,
-                    feedback: {
-                        message: result.text
-                    } 
+    sendEmail = (event) => {
+        event.preventDefault();
+        if (this.validateContactForm()) {
+            console.log('Sending email', this.state.contact.form);
+            emailjs.send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                this.state.contact.form,
+                process.env.REACT_APP_EMAILJS_USER_ID)
+                .then((result) => {
+                    this.setContactFeedback(result.text, 'Message sent!');
+                }, (error) => {
+                    this.setContactFeedback("ERROR", "Could not send message!")
+                });
+            this.resetContactForm();
+        }
+    }
+
+    validateContactForm = () => {
+        let form = this.state.contact.form;
+        //check name
+        if (form.user_name === '') {
+            this.setContactFeedback('ERROR', 'Please enter your name.');
+            return false;
+        }
+        //check email
+        const emailRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+        if (!form.user_email.match(emailRegex)) {
+            this.setContactFeedback('ERROR', 'Please enter a valid Email.');
+            return false;
+        }
+        //check message
+        if (form.message === '') {
+            this.setContactFeedback('ERROR', 'Please send me a message, not an empty one 😊');
+            return false;
+        }
+        return true;
+    }
+
+    resetContactForm = () => {
+        this.setState((prevState) => ({
+            ...prevState,
+            contact: {
+                ...prevState.contact,
+                form: {
+                    user_name: '',
+                    user_email: '',
+                    subject: '',
+                    message: ''
                 }
-            }));
-          }, (error) => {
-            console.log(error.text);
-          });
-      }
+            }
+        }));
+    }
+
+    setContactFeedback = (status, message) => {
+        this.setState((prevState) => ({
+            ...prevState,
+            contact: {
+                ...prevState.contact,
+                feedback: {
+                    status: status,
+                    message: message
+                }
+            }
+        }));
+    }
 
     render() {
-        // return this.props.children;
         return (
             <GlobalContext.Provider
                 value={{
