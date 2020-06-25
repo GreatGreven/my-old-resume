@@ -33,7 +33,12 @@ export default React.createContext({
     },
     portfolio: {
         title: '',
-        content: ''
+        content: [
+            {
+                name: '',
+                image: '',
+            }
+        ]
     },
     contact: {
         title: '',

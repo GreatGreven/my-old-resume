@@ -125,17 +125,8 @@ class GlobalState extends Component {
         },
         portfolio: {
             title: 'My portfolio',
-            content: 'Sartorial kogi taxidermy, kickstarter synth yr irony ennui' +
-                'everyday carry retro helvetica stumptown cloud bread squid' +
-                'echo park. Etsy cloud bread sartorial quinoa tacos beard' +
-                'mumblecore shaman tumblr pop-up. Twee retro fingerstache af' +
-                ' helvetica pabst 8-bit leggings taiyaki portland ramps tbh' +
-                'tumblr vinyl. Neutra humblebrag bushwick portland subway tile' +
-                'plaid, offal scenester flexitarian cliche squid small batch' +
-                'palo santo. Palo santo meh adaptogen +1 3 wolf moon, listicle' +
-                'brunch ethical fanny pack everyday carry fam. Offal fingerstache' +
-                'taxidermy, man bun venmo PBR&amp;B helvetica thundercats everyday' +
-                'carry tote bag artisan cray wolf jianbing.'
+            description: '',
+            repos: []
         },
         contact: {
             title: 'Contact',
@@ -168,6 +159,27 @@ class GlobalState extends Component {
         }
         document.body.classList.add(current);
         localStorage.setItem('theme', current);
+    }
+
+    fetchPortfolio = () => {
+        fetch('https://api.github.com/users/greatgreven/repos')
+        .then(res => res.json())
+        .then(data => 
+            data.map((repo, i) => 
+                this.setState(prevState => ({
+                        ...prevState,
+                        portfolio: {
+                            ...prevState.portfolio,
+                            repos: [
+                                ...prevState.portfolio.repos,
+                                {
+                                    key: i,
+                                    name: repo.name
+                                    //todo: add more
+                                }
+                            ]
+                        }
+                    }))))
     }
 
     toggleTheme = () => {
@@ -276,6 +288,7 @@ class GlobalState extends Component {
                     portfolio: this.state.portfolio,
                     contact: this.state.contact,
                     notFound: this.state.notFound,
+                    fetchPortfolio: this.fetchPortfolio,
                     toggleTheme: this.toggleTheme,
                     sendEmail: this.sendEmail,
                     updateContactField: this.updateContactField
