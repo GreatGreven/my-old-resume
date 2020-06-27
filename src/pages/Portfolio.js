@@ -10,7 +10,9 @@ export default class Portfolio extends React.Component {
     }
     
     componentDidMount(){
-        this.context.fetchPortfolio();
+        if (this.context.portfolio.repos.length == 0){
+            this.context.fetchPortfolio();
+        }
     }
 
     render(){
@@ -20,7 +22,11 @@ export default class Portfolio extends React.Component {
                     <p>{this.context.portfolio.description}</p>
                     <ul>
                         {this.context.portfolio.repos.map(repo => 
-                            <li key={repo.key}>repo.name</li>
+                            <li key={repo.key}>
+                                <a href={repo.link} target="_blank">
+                                    {repo.name}
+                                </a>
+                            </li>
                         )}    
                     </ul>
                 </div>

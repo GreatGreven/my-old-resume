@@ -174,7 +174,10 @@ class GlobalState extends Component {
                                 ...prevState.portfolio.repos,
                                 {
                                     key: i,
-                                    name: repo.name
+                                    name: repo.name,
+                                    link: repo.html_url,
+                                    description: repo.description,
+                                    languages: repo.languages
                                     //todo: add more
                                 }
                             ]
