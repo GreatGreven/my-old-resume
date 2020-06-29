@@ -1,7 +1,9 @@
 h1 {
     text-align: center;
+    width: 100%;
 }
 
-.resume {
-    height: 90vh;
+#resume {
+    display: flex;
+    flex-wrap: wrap;
 }

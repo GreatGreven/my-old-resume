@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Link, BrowserRouter as Router, useHistory as history, Switch, NavLink, HashRouter } from 'react-router-dom';
+import { Route, BrowserRouter as Router, useHistory as history, Switch} from 'react-router-dom';
 import Nav from './components/Nav';
 import GlobalState from './context/GlobalState.js';
 import About from './pages/About';
-import Resumé from './pages/Resume';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
@@ -19,25 +18,12 @@ class App extends Component {
           <Nav toggleTheme={this.toggleTheme}/>
           <main>
             <Switch>
-              <Route exact path='/' component={Home}
-                // onEnter={document.getElementById("home").scrollIntoView()}
-                // onEnter={console.log(document.getElementById("home"))}
-              />
-              <Route path='/about' component={About}
-                // onEnter={document.getElementById("about").scrollIntoView()}
-              />
-              <Route path='/resume' component={Resume}
-                // onEnter={document.getElementById("resume").scrollIntoView()}
-              />
-              <Route path='/portfolio' component={Portfolio}
-                // onEnter={document.getElementById("portfolio").scrollIntoView()}
-              />
-              <Route path='/contact' component={Contact}
-                // onEnter={document.getElementById("contact").scrollIntoView()}
-              />
-              <Route component={NotFound} 
-                // onEnter={document.getElementById("not-found").scrollIntoView()}
-              />
+              <Route exact path='/' component={Home}/>
+              <Route path='/about' component={About}/>
+              <Route path='/resume' component={Resume}/>
+              <Route path='/portfolio' component={Portfolio}/>
+              <Route path='/contact' component={Contact}/>
+              <Route component={NotFound}/>
             </Switch>
           </main>
         </GlobalState>

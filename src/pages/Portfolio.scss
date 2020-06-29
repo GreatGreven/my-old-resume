@@ -1,7 +1,10 @@
 h1 {
     text-align: center;
+    width: 100%;
 }
 
-.portfolio {
-    height: 90vh;
+#portfolio {
+    display: flex;
+    flex-wrap: wrap;
+
 }

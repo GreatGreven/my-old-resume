@@ -10,8 +10,8 @@ export default function Contact() {
                     <h1>{context.contact.title}</h1>
                     <div className='media-links'>
                         {context.contact.content.map((section, index) => (
-                            <a href={section.content} target='_blank' key={index}>
-                                <img src={section.image} />
+                            <a href={section.content} target='_blank' rel="noopener noreferrer" key={index}>
+                                <img src={section.image} alt={section.title}/>
                             </a>
                         ))}
                     </div>

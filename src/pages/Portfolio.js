@@ -1,35 +1,33 @@
 import React from 'react';
-import GlobalContext from '../context/global-context.js'
-import './Portfolio.scss'
+import GlobalContext from '../context/global-context.js';
+import Card from '../components/Card'
+import './Portfolio.scss';
 
 export default class Portfolio extends React.Component {
     static contextType = GlobalContext;
 
-    constructor(props){
-        super(props);
-    }
-    
-    componentDidMount(){
-        if (this.context.portfolio.repos.length == 0){
+    componentDidMount() {
+        if (this.context.portfolio.repos.length === 0) {
             this.context.fetchPortfolio();
         }
     }
 
-    render(){
+    render() {
         return (
-                <div id="portfolio">
-                    <h1>{this.context.portfolio.title}</h1>
-                    <p>{this.context.portfolio.description}</p>
-                    <ul>
-                        {this.context.portfolio.repos.map(repo => 
-                            <li key={repo.key}>
-                                <a href={repo.link} target="_blank">
-                                    {repo.name}
-                                </a>
-                            </li>
-                        )}    
-                    </ul>
-                </div>
+            <div id="portfolio">
+                <h1>{this.context.portfolio.title}</h1>
+                <p>{this.context.portfolio.description}</p>
+                {this.context.portfolio.repos.map(repo =>
+                    <Card key={repo.key}>
+                        <a href={repo.link} target="_blank" rel="noopener noreferrer">
+                            {repo.name}
+                        </a>
+                        <blockquote>
+                            {repo.description}
+                        </blockquote>
+                    </Card>
+                )}
+            </div>
         );
     }
 }
