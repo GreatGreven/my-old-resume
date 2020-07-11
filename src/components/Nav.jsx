@@ -1,17 +1,15 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router, Switch, NavLink, HashRouter } from 'react-router-dom';
-// import {NavHashLink as NavLink} from 'react-router-hash-link';
 import GlobalContext from '../context/global-context';
 import './Nav.scss';
 
-export default function Nav(props){
+export default function Nav(){
     return (
         <GlobalContext.Consumer>
             {context => (
                 <nav className="navbar">
                     <div className="navbar-nav">
 
-                        <a href='#home' className="logo nav-item">
+                        <a href='' className="logo nav-item">
                         <span className="link-text logo-text">Menu</span>
                         <svg
                             aria-hidden="true"
