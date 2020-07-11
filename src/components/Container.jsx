@@ -15,7 +15,7 @@ export default function Container() {
             <Resumé />
             <Portfolio />
             <Contact />
-            <NotFound />
+            {/* <NotFound /> */}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Route, Link, BrowserRouter as Router, Switch, NavLink, HashRouter } from 'react-router-dom';
-import {NavHashLink as NavLink} from 'react-router-hash-link';
+import { Route, Link, BrowserRouter as Router, Switch, NavLink, HashRouter } from 'react-router-dom';
+// import {NavHashLink as NavLink} from 'react-router-hash-link';
 import GlobalContext from '../context/global-context';
 import './Nav.scss';
 
@@ -11,7 +11,7 @@ export default function Nav(props){
                 <nav className="navbar">
                     <div className="navbar-nav">
 
-                        <NavLink smooth to='/' className="logo nav-item">
+                        <a href='#home' className="logo nav-item">
                         <span className="link-text logo-text">Menu</span>
                         <svg
                             aria-hidden="true"
@@ -35,9 +35,9 @@ export default function Nav(props){
                             />
                             </g>
                         </svg>
-                        </NavLink>
+                        </a>
             
-                        <NavLink smooth to='/about' className="nav-item">
+                        <a href='#about' className="nav-item">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             aria-hidden="true" 
@@ -54,9 +54,9 @@ export default function Nav(props){
                             />
                         </svg>
                         <span className="link-text">About</span>
-                        </NavLink>
+                        </a>
 
-                        <NavLink smooth to='/resume' className="nav-item">
+                        <a href='#resume' className="nav-item">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             aria-hidden="true" 
@@ -73,9 +73,9 @@ export default function Nav(props){
                             />
                         </svg>
                         <span className="link-text">Resumé</span>
-                        </NavLink>
+                        </a>
 
-                        <NavLink smooth to='/portfolio' className="nav-item">
+                        <a href='#portfolio' className="nav-item">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             aria-hidden="true" 
@@ -91,9 +91,9 @@ export default function Nav(props){
                             />
                             </svg>
                         <span className="link-text">Portfolio</span>
-                        </NavLink>
+                        </a>
 
-                        <NavLink smooth to='/contact' className="nav-item">
+                        <a href='#contact' className="nav-item">
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             aria-hidden="true" 
@@ -110,7 +110,7 @@ export default function Nav(props){
                             />
                         </svg>
                         <span className="link-text">Contact</span>
-                        </NavLink>
+                        </a>
 
                         <div className="nav-item" id="themeButton" onClick={context.toggleTheme}>
                         <svg
