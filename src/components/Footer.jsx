@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import GlobalContext from '../context/global-context.js'
 import './Footer.scss';
 

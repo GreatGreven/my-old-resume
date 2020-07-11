@@ -1,13 +1,32 @@
-h1 {
-    text-align: center;
-}
-
 .highlight {
     font-size: larger;
     font-weight: bold;
     color: var(--text-secondary);
 }
 
-.home {
-    height: 90vh;
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    h1 {
+        text-align: center;
+        width: auto;
+    }
+    img {
+        width: 40%;
+        max-width: 20rem;
+    }
 }
+
+/* Small screens */
+@media only screen and (max-width: 599px) {
+    #home{
+        height: 90vh;
+    }
+    
+}
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+  }

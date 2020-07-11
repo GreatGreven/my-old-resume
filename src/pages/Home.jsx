@@ -12,7 +12,7 @@ export default function Home(){
                         <br />
                         {context.welcome.highlight.map(item => <span className='highlight'> {item}</span>)}
                     </h1>
-                    <img src={context.welcome.imageSmall} alt='profile'/>
+                    <img src={context.welcome.imageLarge} alt='profile'/>
                 </div>
             )}
         </GlobalContext.Consumer>

@@ -22,9 +22,9 @@ class GlobalState extends Component {
         },
         profile: [
             {
-                title: 'A little about myself',
+                title: 'About myself',
                 content: 'My name is Eric Grevillius, 24 years old and my long term ' +
-                    'career goal is to become a Fullstack developer. I\'m studying' +
+                    'career goal is to become a Fullstack developer. I\'m studying ' +
                     'at the moment to complete my Backleor\'s degree in Computer Science and ' +
                     'Application Developers at Malmö University. I am a methodical ' +
                     'and analytical problem solver with an eye for detail. As a person ' +
@@ -34,7 +34,7 @@ class GlobalState extends Component {
                     'What I am looking for today is a great place to start my career.'
             },
             {
-                title: 'Brief about my compentence and skills',
+                title: 'Compentence and skills',
                 content: 'I have experience working with version management such as GIT, ' +
                     'and programming languages ​​such as Java (Swing, JavaFX and Spring), ' +
                     'HTML, CSS. Has also worked with JavaScript on front-end (Vanilla and React) ' +
@@ -52,7 +52,7 @@ class GlobalState extends Component {
                     'is something I like to take on.'
             },
             {
-                title: 'My interests',
+                title: 'Interests',
                 content: 'I am mostly interested in technology, especially building, ' +
                     'disassembling and understanding how both software and hardware' +
                     'work. I am passionate about software development. I am used to ' +

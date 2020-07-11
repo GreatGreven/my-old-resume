@@ -1,11 +1,3 @@
-h1 {
-    text-align: center;
-}
-
-.contact {
-    height: 90vh;
-}
-
 .ERROR {
     background-color: red;    
 }
@@ -13,3 +5,58 @@ h1 {
 .OK {
     background-color: green;
 }
+
+#contact {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    > * {
+        margin-bottom: 1rem;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    fieldset{
+        width: min-content;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .form-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #send-button {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    > .media-links {
+        margin-top: auto;
+        width: 40vw;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 599px) {
+    #contact{
+        height: 80vh;
+    }
+    
+}
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+  }
