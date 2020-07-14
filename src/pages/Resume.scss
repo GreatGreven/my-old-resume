@@ -3,7 +3,12 @@
     width: 100%;
 }
 
-#resume {
+#resume { margin: 1rem;}
+
+#resume > .container{
+    margin: 1rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column ;
+    justify-content: baseline;
+    align-items: center;
 }

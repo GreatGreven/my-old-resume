@@ -3,10 +3,16 @@ import './Card.scss';
 
 const Card = (props) => {
     return (
-        <div className="Card-div" key="props.key">
+        <div className="card" key="props.key" onClick={show}>
             {props.children}
         </div>
     )
+}
+
+const show = (event) => {
+    let card = event.target;
+    console.log(card.className)
+
 }
 
 export default Card;

@@ -3,6 +3,7 @@
     position: fixed;
     background-color: var(--bg-primary);
     transition: width 200ms ease;
+  z-index: 1;
   }
   
   .navbar-nav {
@@ -36,8 +37,8 @@
   }
   
   .link-text {
-    display: none;
-    margin-left: 1rem;
+    // display: none;
+    // visibility: hidden;
   }
   
   .nav-item svg {
@@ -100,6 +101,10 @@
     .nav-link {
       justify-content: center;
     }
+
+    .link-text {
+      display: none;
+    }
   
     .nav-item {
      width: 20vw;
@@ -127,10 +132,18 @@
     .navbar:hover {
       width: 16rem
     }
+
+    .navbar .link-text{
+      visibility: hidden;
+      max-width: 0;
+      overflow: hidden;
+    }
   
     .navbar:hover .link-text {
-      display: inline;
-      transition: opacity var(--transition-speed);
+      visibility: visible;
+      max-width: 100vh;
+      margin-left: 1rem;
+      transition: all var(--transition-speed) ease;
     }
   }
   
