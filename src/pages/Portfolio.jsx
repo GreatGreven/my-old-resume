@@ -21,16 +21,17 @@ export default class Portfolio extends React.Component {
                 {this.context.portfolio.repos.map(repo =>
                     <Card key={repo.key}>
                         <Face>
-                            <a href={repo.link} target="_blank" rel="noopener noreferrer">
                                 <h3>
                                     {repo.name}
                                 </h3>
-                            </a>
                         </Face>
                         <Face>
-                            <blockquote>
+			    {repo.description && <blockquote>
                                 {repo.description}
-                            </blockquote>
+                            </blockquote>}
+			    <a href={repo.link} target="_blank" rel="noopener noreferrer">
+			        READ MORE
+			    </a>
                         </Face>
                     </Card>
                 )}

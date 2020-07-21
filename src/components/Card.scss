@@ -1,6 +1,7 @@
 .card {
     margin: 1rem;
     border: 1px inset black;
+    background-color: var(--bg-primary);
     border-radius: 2rem;
     width: 90%;
     height: auto;
@@ -11,10 +12,12 @@
     transition: all var(--transition-speed) ease;
 }
 
-// .Card-div:first-child {
-//     // align-self: center;
-// }
-
+.card .face {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
 .card  .face:first-child {
     filter: opacity(0.5);
     display: block;
@@ -51,8 +54,18 @@
 }
 
 .card  a {
+    font-weight:500;
     text-decoration: none;
     color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.card  a:hover {
+    background-color: var(--accent-primary);
+    box-shadow: 0px 0px 50px 10px var(--accent-secondary);
 }
 
 /* Small screens */
