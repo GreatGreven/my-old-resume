@@ -42,6 +42,14 @@
   --accent-secondary: #df49a6;
 }
 
+.fa-primary {
+  color: var(--accent-primary);
+}
+
+.fa-secondary {
+  color: var(--accent-secondary);
+}
+
 body {
   margin: 0;
   padding: 0;

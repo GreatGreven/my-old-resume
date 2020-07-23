@@ -45,7 +45,39 @@
         width: 40vw;
         display: flex;
         justify-content: space-evenly;
+
+        svg {
+            min-width: 3rem;
+            max-width: 3rem;
+        }
     }
+}
+
+.facebook {
+    color: #4267B2;
+}
+
+.instagram {
+    color: #e4405f;
+    // color: linear-gradient(45deg,  
+    // #405DE6, 
+    // #5851DB, 
+    // #833AB4, 
+    // #C13584, 
+    // #E1306C, 
+    // #FD1D1D,
+    // #F56040,
+    // #F77737,
+    // #FCAF45,
+    // #FFDC80);
+}
+
+.github {
+    color: black;
+}
+
+.linkedin {
+    color: #2867B2;
 }
 
 
