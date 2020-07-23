@@ -10,13 +10,14 @@
     justify-content: flex-start;
     align-items: stretch;
     transition: all var(--transition-speed) ease;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
 }
 
 .card .face {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
 }
 .card  .face:first-child {
     filter: opacity(0.5);
@@ -54,6 +55,7 @@
 }
 
 .card  a {
+    align-self:flex-end;
     font-weight:500;
     text-decoration: none;
     color: var(--text-primary);
