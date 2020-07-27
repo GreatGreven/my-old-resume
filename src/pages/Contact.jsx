@@ -17,7 +17,6 @@ export default function Contact() {
                         <form onSubmit={context.sendEmail}>
                             <input type="hidden" name="contact_number" />
                             <div className="form-group">
-                                <label htmlFor='user_name'>Name</label>
                                 <input 
                                     type='text' 
                                     id='user_name' 
@@ -25,10 +24,10 @@ export default function Contact() {
                                     value={context.contact.form.user_name}
                                     onChange={context.updateContactField}
                                     />
+		    		<label htmlFor='user_name'>Name</label>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor='user_email'>Email</label>
                                 <input 
                                     type='email' 
                                     id='user_email' 
@@ -36,10 +35,10 @@ export default function Contact() {
                                     value={context.contact.form.user_email}
                                     onChange={context.updateContactField}
                                     />
+		    		<label htmlFor='email'>Email</label>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor='subject'>Subject</label>
                                 <input 
                                     type='text' 
                                     id='subject' 
@@ -47,10 +46,10 @@ export default function Contact() {
                                     value={context.contact.form.subject}
                                     onChange={context.updateContactField}
                                     />
+		    		<label htmlFor='subject'>Subject</label>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor='message'>Message</label>
                                 <textarea 
                                     id='message' 
                                     name='message' 
@@ -58,6 +57,7 @@ export default function Contact() {
                                     value={context.contact.form.message}
                                     onChange={context.updateContactField}
                                     />
+		    		<label htmlFor='message'>Message</label>
                             </div>
 
                             <input id='send-button' type='submit' value='Send' />
