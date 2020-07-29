@@ -19,45 +19,49 @@ export default function Contact() {
                             <div className="form-group">
                                 <input 
                                     type='text' 
+		    		    className='form-input'
                                     id='user_name' 
                                     name='user_name' 
                                     value={context.contact.form.user_name}
                                     onChange={context.updateContactField}
                                     />
-		    		<label htmlFor='user_name'>Name</label>
+		    		<label htmlFor='user_name' className='form-label'>Name</label>
                             </div>
 
                             <div className="form-group">
                                 <input 
                                     type='email' 
+		    		    className='form-input'
                                     id='user_email' 
                                     name='user_email'
                                     value={context.contact.form.user_email}
                                     onChange={context.updateContactField}
                                     />
-		    		<label htmlFor='email'>Email</label>
+		    		<label htmlFor='email' className='form-label'>Email</label>
                             </div>
 
                             <div className="form-group">
                                 <input 
                                     type='text' 
+		    		    className='form-input'
                                     id='subject' 
                                     name='subject' 
                                     value={context.contact.form.subject}
                                     onChange={context.updateContactField}
                                     />
-		    		<label htmlFor='subject'>Subject</label>
+		    		<label htmlFor='subject' className='form-label'>Subject</label>
                             </div>
 
                             <div className="form-group">
                                 <textarea 
                                     id='message' 
+		    		    className='form-input'
                                     name='message' 
                                     maxLength='5000' 
                                     value={context.contact.form.message}
                                     onChange={context.updateContactField}
                                     />
-		    		<label htmlFor='message'>Message</label>
+		    		<label htmlFor='message' className='form-label'>Message</label>
                             </div>
 
                             <input id='send-button' type='submit' value='Send' />
