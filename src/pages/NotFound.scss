@@ -1,7 +1,11 @@
-h1 {
-    text-align: center;
+#not-found {
+    height: 70vh;
+    h1, h3 {
+        text-align: center;
+    }
 }
-
-.not-found {
-    height: 90%;
+@media only screen and (max-width: 599px) {
+    #not-found {
+	height:70vh;
+    }
 }
