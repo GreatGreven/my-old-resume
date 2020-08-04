@@ -3,12 +3,13 @@
     font-weight: bold;
     color: var(--text-secondary);
     filter: drop-shadow(0px 0px 0px gray);
-    transition: all 100ms ease-in;
+    transition: all 100ms ease-in-out;
 }
 
 .highlight:hover {
     filter: drop-shadow(0px 0px 10px gray);
     color: var(--accent-primary);
+    font-size: 3rem;
 }
 
 #home {
@@ -19,6 +20,7 @@
     h1 {
         text-align: center;
         width: auto;
+	box-sizing: border-box;
     }
     img {
         width: 40%;
@@ -29,7 +31,11 @@
 /* Small screens */
 @media only screen and (max-width: 599px) {
     #home{
-        height: 90vh;
+        height: auto;
+	flex-direction: column-reverse;
+	img {
+	    width: 50%;
+	}
     }
     
 }
