@@ -1,4 +1,7 @@
 .highlight {
+    display: inline-block;
+    margin:0 0.25rem;
+    width: auto;
     font-size: larger;
     font-weight: bold;
     color: var(--text-secondary);
@@ -8,8 +11,8 @@
 
 .highlight:hover {
     filter: drop-shadow(0px 0px 10px gray);
+    transform: scale(1.1);
     color: var(--accent-primary);
-    font-size: 3rem;
 }
 
 #home {
@@ -17,10 +20,11 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    box-sizing: border-box;
     h1 {
         text-align: center;
         width: auto;
-	box-sizing: border-box;
+	padding: 1rem;
     }
     img {
         width: 40%;
@@ -31,7 +35,7 @@
 /* Small screens */
 @media only screen and (max-width: 599px) {
     #home{
-        height: auto;
+        height: 75vh;
 	flex-direction: column-reverse;
 	img {
 	    width: 50%;
