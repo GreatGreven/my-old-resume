@@ -22,11 +22,11 @@ class GlobalState extends Component {
         },
         profile: [
             {
-                title: 'About myself',
-                content: 'My name is Eric Grevillius, 24 years old and my long term ' +
-                    'career goal is to become a Fullstack developer. I\'m studying ' +
-                    'at the moment to complete my Backleor\'s degree in Computer Science and ' +
-                    'Application Developers at Malmö University. I am a methodical ' +
+                title: 'About',
+		image: '',
+                content: 'My name is Eric Grevillius, 24 years old and my goal is to become a Software developer. I\'m studying ' +
+                    'at the moment to complete my Bachelor\'s degree in Computer Science and ' +
+                    'Application Development at Malmö University. I am a methodical ' +
                     'and analytical problem solver with an eye for detail. As a person ' +
                     'I am a quick learner, have a high level of ambition and like the ' +
                     'feeling of delivering something of high quality. I am not afraid of ' +
@@ -34,42 +34,26 @@ class GlobalState extends Component {
                     'What I am looking for today is a great place to start my career.'
             },
             {
-                title: 'Compentence and skills',
-                content: 'I have experience working with version management such as GIT, ' +
-                    'and programming languages ​​such as Java (Swing, JavaFX and Spring), ' +
-                    'HTML, CSS. Has also worked with JavaScript on front-end (Vanilla and React) ' +
-                    'and back-end (Node.js). I have experience developing according to ' +
-                    'test-driven and computer-driven methodologies. Databases I have ' +
-                    'worked with are MySQL, Oracle, PostgreSQL and NoSQL databases like MongoDB.' +
-                    'I am used to working with agile methods like Scrum or Extreme Programming (XP).' +
-                    'In high school, I studied Electricity and Energy with a focus on computer and ' +
-                    'communication technology. During that time I have practiced as IT support and ' +
-                    'the majority of them were at Alfa Laval\'s IT Service Desk. There, my tasks were ' +
-                    'to help employees with both simple and advanced IT problems by solving error reports.' +
-                    'During the last year of high school, I was the deputy chair of the school\'s ' +
-                    'student body and I have also been the team captain and coach KFUM Ystad Basketball Club, ' +
-                    'where I still am a referee. So a leading role I find natural and responsibility ' +
-                    'is something I like to take on.'
-            },
-            {
-                title: 'Interests',
+                title: 'Passions',
                 content: 'I am mostly interested in technology, especially building, ' +
-                    'disassembling and understanding how both software and hardware' +
+                    'disassembling and understanding how both software and hardware ' +
                     'work. I am passionate about software development. I am used to ' +
                     'working with clients, working as part of a group, but also ' +
                     'enjoy working independently. I am considered a responsible ' +
                     'nice guy who is easy to talk to and always gives 100%.',
-                interests: {
-                    title: 'More things I like to do:',
-                    content: [
-                        "Playing basketball",
-                        "Skiing",
-                        "Outdoor activities",
-                        "Study up on IT and emerging technologies",
-                        "Play Board and Role-playing games",
-                        "Play Video games"
-                    ]
-                }
+		image:''
+	    },{
+                title: 'Hobbies',
+		image:'',
+                content: [
+		    "Programming/Developing",
+                    "Playing basketball",
+                    "Skiing",
+                    "Outdoor activities",
+                    "Study up on IT and emerging technologies",
+                    "Play Board and Role-playing games",
+                    "Play Video games"
+                ]
             }
         ],
         resume: {

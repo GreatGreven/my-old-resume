@@ -8,19 +8,22 @@ export default function About() {
             {context => (
                 <div id="about">
                     {context.profile.map(section =>
-                        <div>
-                            <h1>{section.title}</h1>
-                            <p>{section.content}</p>
-                            {section.interests ? (
-                                <div>
-                                    <h2>{section.interests.title}</h2>
-                                    <ul>
-                                        {section.interests.content.map(item => <li>{item}</li>)}
-                                    </ul>
-                                </div>)
-                                : null}
-                        </div>
-                    )}
+			<div>                                             <h1>                                              {section.title}                                                                         </h1>
+			    {section.title === 'Hobbies' ? 
+				<ul>
+				    {section.content.map(item => 
+					<li>
+				  	{item}
+					</li>
+				    )}
+                                </ul>
+				:
+                                <p>
+				    {section.content}
+				</p>
+                    	    }
+			</div>
+		    )}
                 </div>
             )}
         </GlobalContext.Consumer>
