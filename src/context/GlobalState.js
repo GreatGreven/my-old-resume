@@ -62,47 +62,98 @@ class GlobalState extends Component {
                 {
                     title: "Core Skills",
                     content: [
-                        "Problem-solving",
-                        "Application Development",
-                        "Object-oriented programming",
-                        "Web Development",
-                        "Project Management",
-                        "Database Management",
-                        "Embedded Systems"
+			    {title:"Problem-solving"},
+                        {title:"Application Development"},
+                        {title:"Object-oriented programming"},
+                        {title:"Web Development"},
+                        {title:"Project Management"},
+                        {title:"Database Management"},
+                        {title:"Embedded Systems"}
                     ]
                 },
                 {
                     title: "Education & Qualifications",
                     content: [
-                        "Computer Science and Application development, Malmö University. (2017 - ongoing, expected graduation June 2020)",
-                        "The electricity and energy program at Östersjögymnasiet, targeting computer and communication technology. (graduated 2015)",
-                        "Foreign Exchange student program in California with Youth For Understanding (YFU) (2012/2013)",
-                        "Alfa Laval, IT Service Desk, internship during my studies (2014)",
-                        "Basketball coach and referee training",
-                        "40+ hours of Web Development courses",
-                        "90+ hours of Game Development courses"
+			    {
+				title: "Computer Science and Application development, Malmö University.",
+				description:'',
+				location:'@ Malmö University',
+				date:"(2017 - ongoing, expected graduation June 2020)"},
+			    {
+				title:"The electricity and energy program targeting computer and communication technology.",
+				description:'',
+				location:"@ Östersjögymnasiet",
+				date:"(graduated 2015)"},
+			    {
+				title:"Foreign Exchange student program in California with Youth For Understanding (YFU)",
+				date:"(2012/2013)"},
+			    {
+				title:"Alfa Laval, IT Service Desk, internship during my studies",
+				date:"(2014)"},
+			    {
+				title: "Basketball coach and referee training",
+				date:''},
+			    {
+				title: "40+ hours of Web Development courses",
+				date:''},
+			    {
+				title: "90+ hours of Game Development courses",
+				date:''}
                     ]
                 },
                 {
                     title: "Professional Experience",
                     content: [
-                        "Summer work @ Alfa Laval AB, Sweden (2014)",
-                        "Kitchen staff @ Hotel Ystad Saltsjöbad, Sweden (2015)",
-                        "Substitute caregiver for elderly in Ystad, Sweden (2015)",
-                        "Substitute worker and part-time during studies at Alfa Laval's Logistic Center, Staffanstorp (December 2015 - August 2019)"
+			    {
+				title:"Summer work",
+				location:"@ Alfa Laval AB, Sweden",
+				date:"(2014)"},
+                            {
+				title:"Kitchen staff",
+				location:"@ Hotel Ystad Saltsjöbad, Sweden",
+				date:"(2015)"},
+			    {
+				title:"Substitute caregiver for elderly",
+				location:"in Ystad, Sweden",
+				date:"(2015)"},
+			    {
+				title:"Substitute worker",
+				description:"Substitute worker and part-time during studies",
+				location: "@ Alfa Laval's Logistic Center, Staffanstorp",
+				date:"(December 2015 - present)"}
                     ]
                 },
                 {
                     title: "Programming Languages",
                     content: [
-                        "Java",
-                        "HTML",
-                        "CSS",
-                        "JavaScript",
-                        "C# .NET",
-                        "C",
-                        "Assembly",
-                        "Python",
+			    {
+				title:"Java",
+				level:'90'
+			    },{
+                        	title:"HTML",
+				level:'90'
+			    },{
+                        	title:"CSS",
+				level:'60'
+			    },{
+                        	title:"JavaScript",
+				level:'80'
+			    },{
+                        	title:"C# .NET",
+				level:'40'
+			    },{
+                        	title:"C",
+				level:'40'
+			    },{
+                        	title:"Assembly",
+				level:'60'
+			    },{
+                        	title:"Python",
+				level:'20'
+			    },{
+				title:'Cobol',
+				level:'10'
+			    }
                     ]
                 }
             ]

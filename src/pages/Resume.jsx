@@ -11,18 +11,20 @@ export default function Resume(){
                 <div id="resume">
                     <h1>{context.resume.title}</h1>
                     <div className="container">
-                    {context.resume.content.map((section) => {
-                        return (<Card>
-                            <Face>
-                                <h3>{section.title}</h3>
-                            </Face>
-                            <Face>
-                                <ul>
-                                    {section.content.map(item => <li>{item}</li>)}
-                                </ul>
-                            </Face>
-                        </Card>);
-                    })}
+                    {context.resume.content.map((section) => 
+			<div>
+			<h3>{section.title}</h3>
+			{section.content.map(item => 
+			<Card>
+			    <Face>
+				{item.title}
+			    </Face>
+			    <Face>
+			    </Face>
+			</Card>)}
+			</div>
+		    )
+                    }
                     </div>
                 </div>
             )}
