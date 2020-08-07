@@ -24,7 +24,7 @@ class GlobalState extends Component {
             {
                 title: 'About',
 		image: '',
-                content: 'My name is Eric Grevillius, 24 years old and my goal is to become a Software developer. I\'m studying ' +
+                content: 'My name is Eric Grevillius, 25 years old and my goal is to become a Software developer. I\'m studying ' +
                     'at the moment to complete my Bachelor\'s degree in Computer Science and ' +
                     'Application Development at Malmö University. I am a methodical ' +
                     'and analytical problem solver with an eye for detail. As a person ' +
