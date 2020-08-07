@@ -20,6 +20,25 @@ export default function Resume(){
 				{item.title}
 			    </Face>
 			    <Face>
+				{item.level ? 
+				    <div>
+					percent
+				    </div>
+				: 
+				    <div>
+					{item.description ? 
+						<div className='description'>
+						    {item.description}
+						</div>: null}
+					{item.date ? 
+						<div className='date'>
+						    {item.date}
+						</div> : null}
+					{item.location ? 
+						<div className='location'>
+						    {item.location}
+						</div> : null }
+				    </div>}
 			    </Face>
 			</Card>)}
 			</div>
