@@ -29,7 +29,7 @@
 		width: 100%;
    		position: relative;
     		border-bottom: 2px dashed var(--text-secondary);
-    		margin: 4rem auto 1rem;
+    		margin: 1.5rem auto;
     		transition: 500ms;
   	    }
   	    .label {
@@ -78,13 +78,13 @@
   	    .label {
 		z-index:-1;
     		position: absolute;
-    		transform: translateY(-2rem);
+		top:0.25rem;
     		transform-origin: 0%;
     		transition: transform 400ms;
   	    }
   	    .field:focus-within .label,
 	    .input:not(:placeholder-shown) + .label{
-    		transform: scale(0.8) translateY(-6rem);
+    		transform: scale(0.8) translateY(-2rem);
     		opacity: 1;
     	    }
         }
