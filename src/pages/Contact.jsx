@@ -7,7 +7,6 @@ export default function Contact() {
         <GlobalContext.Consumer>
             {context => (
                 <div id="contact">
-                    <h1>{context.contact.title}</h1>
                     <fieldset>
                         <legend>Send me a message</legend>
                         {context.contact.feedback ? 
@@ -68,7 +67,7 @@ export default function Contact() {
 		    		<label htmlFor='message' className='label'>Message</label>
                             </div>
 
-                            <input className='send button' type='submit' value='Send' />
+                            <input className='send button' type='submit' value='Send' disabled={!context.contact.form.valid}/>
                         </form>
                     </fieldset>
                     <div className='media-links'>

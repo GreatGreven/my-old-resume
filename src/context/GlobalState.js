@@ -7,6 +7,8 @@ import linkedinIcon from '../images/linkedin-logo-png-2026_small.png';
 import GlobalContext from './global-context';
 import emailjs from 'emailjs-com';
 
+const emailRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
 class GlobalState extends Component {
     state = {
         themeMap: {
@@ -178,7 +180,8 @@ class GlobalState extends Component {
                 user_name: '',
                 user_email: '',
                 subject: '',
-                message: ''
+                message: '',
+		valid: false
             }
         },
         notFound: {
@@ -227,12 +230,11 @@ class GlobalState extends Component {
         localStorage.setItem('theme', next);
     }
 
-    updateContactField = (event) => {
+    updateContactField = async (event) => {
         event.preventDefault();
-        var property = event.target.id;
-        var value = event.target.value;
-        console.log(event.target.id, event.target.value)
-        this.setState((prevState) => ({
+        const property = event.target.id;
+        const value = event.target.value;
+	await this.setState((prevState) => ({
             ...prevState,
             contact: {
                 ...prevState.contact,
@@ -245,7 +247,19 @@ class GlobalState extends Component {
                     message: ''
                 }
             }
-        }));
+	}));
+	const form = this.state.contact.form;
+	const validity = form.user_email.match(emailRegex) && form.user_name.length > 0 && form.message.length > 0;
+	this.setState((prevState) => ({
+	    ...prevState,
+	    contact: {
+		...prevState.contact,
+		form: {
+			...prevState.contact.form,
+			valid: validity,
+		    }
+	        }
+	    }));
     }
 
     sendEmail = (event) => {
@@ -274,8 +288,7 @@ class GlobalState extends Component {
             return false;
         }
         //check email
-        const emailRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
-        if (!form.user_email.match(emailRegex)) {
+	if (!form.user_email.match(emailRegex)) {
             this.setContactFeedback('ERROR', 'Please enter a valid Email.');
             return false;
         }
@@ -296,7 +309,8 @@ class GlobalState extends Component {
                     user_name: '',
                     user_email: '',
                     subject: '',
-                    message: ''
+                    message: '',
+		    valid: false
                 }
             }
         }));
