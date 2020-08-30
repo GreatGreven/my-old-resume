@@ -65,7 +65,83 @@ h1{
 }
 p, li{
     font-size: 1.5rem;
+    margin: 1rem;
 }
+hr{
+  overflow: visible; /* For IE */
+  border: none;
+  &::after {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-bottom: -2rem;
+  border-style: solid;
+  border-color: var(--text-secondary);
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  }
+  &::before { /* Not really supposed to work, but does */
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -2rem;
+      border-style: solid;
+      border-color: var(--text-secondary);
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+  }
+}
+.button, button {
+  z-index: 0;
+  position: relative;
+  font-size: 1.5rem;
+  margin: 1.5rem auto;
+  padding: 0.5rem 2rem;
+  color: var(--accent-primary);
+  border: 2px solid var(--accent-primary);
+  background: var(--bg-main);
+  border-radius:0.5rem;
+  &:hover{
+      color: var(--bg-main);
+      background: var(--accent-primary);
+  }
+  &:disabled{
+      filter:grayscale(100%);
+      }
+  }
+// hr {
+//   text-align: center;
+//   display: block;
+//   line-height: 1px;
+//   height: 1px;
+//   margin: 2rem 0;
+//   background: var(--text-secondary);
+//   &::before, &::after {
+//     content: '';
+//     font-size: 2rem;
+//     color: var(--text-secondary);
+//     position: absolute;
+//     transform: rotate(90deg);
+//   }
+//   &::before {
+//     left:0;
+//   }
+//   &::after {
+//     right: 0;
+//   }
+//   & + *::before {
+//     content: '\00A7';
+//     color: var(--text-secondary);
+//     font-size: 4rem;
+//     position: relative;
+//     top: -4.8rem;
+//     left: 50%;
+//     transform: rotate(45deg);
+//     transform-origin: center;
+//     opacity: .6;
+// }
+// }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

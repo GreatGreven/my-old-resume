@@ -19,6 +19,7 @@ class GlobalState extends Component {
         welcome: {
             title: ['Hello World!', 'I am'],
             highlight: ['Eric', 'Grevillius'],
+            subtitle: ['Software', 'Developer'],
             imageSmall: profilePictureSmall,
             imageLarge: profilePictureLarge
         },
