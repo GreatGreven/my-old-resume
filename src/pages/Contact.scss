@@ -114,31 +114,56 @@
     }
 
     > .media-links {
-        margin-top: auto;
-        width: 40vw;
+		width: 60%;
         display: flex;
-        justify-content: space-evenly;
+		justify-content: space-evenly;
+			
+		a {
+			display: grid;
+			place-items: center;
+			background-color: var(--text-primary);
+			border-radius: 50%;
+			box-shadow: 0 5px 4px rgba(0,0,0,.5);
+			transition: 400ms ease-in-out;
+			
+			&:hover{
+					transform: translateY(-0.5rem);
 
-        svg {
-            min-width: 3rem;
-            max-width: 3rem;
-        }
+					> * {
+						filter: grayscale(0)
+					}
+
+					
+			} 
+			
+			svg {
+				box-sizing: border-box;
+				margin: 1rem;
+				width: 3rem;
+				height: 3rem;
+				transition: 400ms ease-in-out;
+				filter: grayscale(100%);				
+			}
+		}
+
+		
     }
 }
 
-.facebook {
-    color: #4267B2;
+#facebook {
+	color: #4267B2;
 }
 
-.instagram {
+
+#instagram {
     color: #e4405f;
 }
 
-.github {
-    color: black;
+#github {
+    color: rgb(48, 4, 49);
 }
 
-.linkedin {
+#linkedin {
     color: #2867B2;
 }
 
